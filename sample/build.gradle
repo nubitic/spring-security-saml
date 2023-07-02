@@ -1,21 +1,17 @@
 apply plugin: 'war'
 apply plugin: 'tomcat'
 
-// Do not generate POM for this module
-install.enabled = false
-
 // Disable publishing to repository for the sample project
 if (tasks.findByPath('artifactoryPublish')) {
     artifactoryPublish.enabled = false
 }
 
-war.archiveName = "${project.name}.war"
+war.archiveFileName = "${project.name}.war"
 
 description = "Spring Security SAML v2 sample webapp"
 
 dependencies {
-
-	compile project(":spring-security-saml2-core"),
+	compileOnly project(":spring-security-saml2-core"),
 		"org.springframework:spring-core:$springVersion",
 		"org.springframework:spring-beans:$springVersion",
 		"org.springframework:spring-context:$springVersion",
@@ -26,9 +22,59 @@ dependencies {
 		"org.slf4j:slf4j-log4j12:$slf4jVersion",
 		"javax.servlet:jstl:1.2"
 
+		compileOnly "org.springframework.security:spring-security-core:$springSecurityVersion",
+		"org.springframework.security:spring-security-config:$springSecurityVersion",
+		"org.slf4j:slf4j-api:$slf4jVersion"
+
+	compileOnly ("org.springframework.security:spring-security-web:$springSecurityVersion") {
+		exclude group: "org.springframework", module: "spring-jdbc"
+		exclude group: "org.springframework", module: "spring-tx"
+	}
+
+	compileOnly(group: "org.opensaml", name: "opensaml", version: "$openSamlVersion") {
+		exclude(module: 'bcprov-jdk15on')
+		exclude(group: 'org.slf4j', module: 'log4j-over-slf4j')
+		exclude(group: 'org.slf4j', module: 'jcl-over-slf4j')
+		exclude(group: 'org.slf4j', module: 'jul-to-slf4j')
+		exclude(group: 'org.owasp.esapi', module: 'esapi')
+		exclude(group: 'ca.juliusdavies', module: 'not-yet-commons-ssl')
+		exclude(group: "org.apache.velocity", module: 'velocity')
+	}
+	compileOnly group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.0'
+	compileOnly group:'org.bouncycastle', name:'bcprov-jdk15on', version: "$bcprovVersion"
+	compileOnly group:'org.bouncycastle', name:'bcpkix-jdk15on', version: "$bcpkixVersion"
+	compileOnly group: 'org.apache.santuario', name: 'xmlsec', version: "$openSamlXmlSec"
+	compileOnly (group:'org.owasp.esapi', name:'esapi', version: "$esapiVersion") {
+		exclude(group: 'org.beanshell', module: 'bsh-core')
+		exclude(group: 'xalan', module: 'xalan')
+		exclude(group: 'xom', module: 'xom')
+		exclude(group: 'log4j', module: 'log4j')
+		exclude(group: 'commons-configuration', module: 'commons-configuration')
+		exclude(group: 'commons-beanutils', module: 'commons-beanutils-core')
+		exclude(group: 'commons-fileupload', module: 'commons-fileupload')
+		exclude(group: 'org.owasp.antisamy', module: 'antisamy')
+		exclude(group: 'org.apache.xmlgraphics', module: 'batik-css')
+	}
+	compileOnly group: 'xalan', name: 'xalan', version:"$xalanVersion"
+	compileOnly group: "com.narupley", name: "not-going-to-be-commons-ssl", version: "0.3.20"
+	compileOnly group: "xml-apis", name: "xml-apis", version: "$xmlApisVersion"
+		
 	providedCompile "javax.servlet:jsp-api:2.0"
 
-	testCompile "junit:junit:4.4"
+	testCompileOnly "junit:junit:4.4"
+/*********************/
+	testRuntimeOnly project(":spring-security-saml2-core"),
+		"org.springframework:spring-core:$springVersion",
+		"org.springframework:spring-beans:$springVersion",
+		"org.springframework:spring-context:$springVersion",
+		"org.springframework:spring-aop:$springVersion",
+		"org.springframework:spring-web:$springVersion",
+		"org.springframework:spring-webmvc:$springVersion",
+		"org.springframework.security:spring-security-config:$springSecurityVersion",
+		"org.slf4j:slf4j-log4j12:$slf4jVersion",
+		"javax.servlet:jstl:1.2"
+	
+	testRuntimeOnly "junit:junit:4.4"
 
 	def tomcatVersion = '7.0.11'
 	tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
