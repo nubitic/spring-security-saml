@@ -2,7 +2,7 @@ buildscript {
 	repositories {
 		maven { url "https://maven.aliyun.com/repository/spring-plugin" }
 		maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
-		maven { url "https://build.shibboleth.net/nexus/content/repositories/releases/" }
+		//maven { url "https://build.shibboleth.net/nexus/content/repositories/releases/" }
 	}
 	dependencies {
 		//classpath("org.springframework.build.gradle:propdeps-plugin:0.0.7")
@@ -22,8 +22,8 @@ configure(allprojects) { project ->
 	ext.springSecurityVersion = "6.1.1"
 	ext.bcprovVersion = "1.64"
 	ext.bcpkixVersion = "1.64"
-	ext.openSamlVersion = "4.2.0"
-	ext.openSamlXmlSec = "2.1.4"
+	ext.openSamlVersion = "2.6.6-nubitic-jakarta-api"
+	ext.openSamlXmlSec = "1.5.8"
 	ext.esapiVersion = "2.2.0.0"
 	ext.xalanVersion = "2.7.2"
 	ext.xmlApisVersion = "1.4.01"
@@ -52,6 +52,12 @@ configure(allprojects) { project ->
 		mavenCentral()
 		maven { url 'https://build.shibboleth.net/nexus/content/repositories/releases/' }
 		maven { url 'https://repository.mulesoft.org/releases/'}
+		maven { url "https://nexus-repo.nubitic.mx/repository/releases/"         
+				credentials {
+		            username "admin"
+		            password "8ho]y\\~+\"Ro]-|x"
+				}
+			   }
 	}
 
 	ext.javadocLinks = [
@@ -92,7 +98,7 @@ configure(coreProjects) { p ->
 	}
 
 	task springSecurity4Test(type: Test) {
-		jvmArgs = ['-ea', '-Xmx500m', '-XX:MaxPermSize=128M']
+		jvmArgs = ['-ea', '-Xmx500m']
 		classpath = sourceSets.test.output + sourceSets.main.output + configurations.springSecurity4TestRuntime
 		reports {
 			html.destination = project.file("$project.buildDir/reports/spring-io-springsecurity4-tests/")

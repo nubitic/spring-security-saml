@@ -21,8 +21,8 @@ import org.springframework.security.saml.parser.SAMLObject;
 import org.springframework.util.Assert;
 import org.springframework.web.util.WebUtils;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.Set;

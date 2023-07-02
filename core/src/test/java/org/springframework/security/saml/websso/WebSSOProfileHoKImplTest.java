@@ -34,9 +34,10 @@ import org.springframework.security.saml.storage.SAMLMessageStorage;
 import org.springframework.security.saml.storage.StorageFactoryTestImpl;
 import org.springframework.security.saml.util.SAMLUtil;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.WriteListener;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static junit.framework.Assert.assertNull;
@@ -74,6 +75,18 @@ public class WebSSOProfileHoKImplTest {
         output = new ServletOutputStream() {
             public void write(int b) throws IOException {
             }
+
+			@Override
+			public boolean isReady() {
+				// TODO Auto-generated method stub
+				return true;
+			}
+
+			@Override
+			public void setWriteListener(WriteListener writeListener) {
+				// TODO Auto-generated method stub
+				
+			}
         };
 
         storage = createMock(SAMLMessageStorage.class);

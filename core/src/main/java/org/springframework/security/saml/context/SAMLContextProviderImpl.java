@@ -57,9 +57,9 @@ import org.springframework.security.saml.util.SAMLUtil;
 import org.springframework.util.Assert;
 
 import javax.net.ssl.HostnameVerifier;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import javax.xml.namespace.QName;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;

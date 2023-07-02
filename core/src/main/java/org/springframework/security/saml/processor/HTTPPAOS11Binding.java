@@ -24,7 +24,7 @@ import org.opensaml.ws.transport.InTransport;
 import org.opensaml.ws.transport.http.HttpServletRequestAdapter;
 import org.opensaml.xml.parse.ParserPool;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class HTTPPAOS11Binding extends HTTPSOAP11Binding {
 

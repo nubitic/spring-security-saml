@@ -14,7 +14,7 @@
  */
 package org.springframework.security.saml.storage;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Factories implementing this interface provide services for storage and retrieval of SAML messages for

@@ -34,12 +34,12 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.util.Assert;
 import org.springframework.web.filter.GenericFilterBean;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -159,7 +159,7 @@ public class SAMLDiscovery extends GenericFilterBean {
      *
      * @param request  request
      * @param response response
-     * @throws javax.servlet.ServletException error
+     * @throws jakarta.servlet.ServletException error
      * @throws java.io.IOException            io error
      */
     protected void processDiscoveryRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

@@ -55,11 +55,13 @@ dependencies {
 		exclude(group: 'org.owasp.antisamy', module: 'antisamy')
 		exclude(group: 'org.apache.xmlgraphics', module: 'batik-css')
 	}
-	compileOnly group: 'xalan', name: 'xalan', version:"$xalanVersion"
+	compileOnly (group: 'xalan', name: 'xalan', version:"$xalanVersion"){
+		exclude(group: 'xml-apis', module: 'xml-apis')
+	}
 	compileOnly group: "com.narupley", name: "not-going-to-be-commons-ssl", version: "0.3.20"
-	compileOnly group: "xml-apis", name: "xml-apis", version: "$xmlApisVersion"
+	//compileOnly group: "xml-apis", name: "xml-apis", version: "$xmlApisVersion"
 		
-	providedCompile "javax.servlet:jsp-api:2.0"
+	compileOnly "jakarta.servlet:jakarta.servlet-api:6.0.0"
 
 	testCompileOnly "junit:junit:4.4"
 /*********************/

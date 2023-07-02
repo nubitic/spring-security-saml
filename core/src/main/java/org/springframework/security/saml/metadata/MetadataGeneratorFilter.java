@@ -25,11 +25,11 @@ import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.GenericFilterBean;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
@@ -92,7 +92,7 @@ public class MetadataGeneratorFilter extends GenericFilterBean {
      * manager.
      *
      * @param request request
-     * @throws javax.servlet.ServletException error
+     * @throws jakarta.servlet.ServletException error
      */
     protected void processMetadataInitialization(HttpServletRequest request) throws ServletException {
 

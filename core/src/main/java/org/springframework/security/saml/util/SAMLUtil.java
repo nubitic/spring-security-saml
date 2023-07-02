@@ -58,7 +58,7 @@ import org.springframework.security.saml.metadata.MetadataManager;
 import org.w3c.dom.Element;
 
 import javax.net.ssl.HostnameVerifier;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import javax.xml.namespace.QName;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

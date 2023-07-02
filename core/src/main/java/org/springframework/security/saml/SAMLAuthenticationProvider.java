@@ -38,7 +38,7 @@ import org.springframework.security.saml.userdetails.SAMLUserDetailsService;
 import org.springframework.security.saml.websso.WebSSOProfileConsumer;
 import org.springframework.util.Assert;
 
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 import java.util.*;
 
 /**

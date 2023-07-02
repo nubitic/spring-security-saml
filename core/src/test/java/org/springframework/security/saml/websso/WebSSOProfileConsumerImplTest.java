@@ -15,7 +15,7 @@
 package org.springframework.security.saml.websso;
 
 import java.util.Arrays;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

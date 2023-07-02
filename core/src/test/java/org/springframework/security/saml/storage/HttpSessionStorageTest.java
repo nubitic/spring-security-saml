@@ -21,7 +21,7 @@ import org.opensaml.saml2.core.AuthnRequest;
 import org.springframework.security.saml.parser.SAMLObject;
 import org.springframework.web.util.WebUtils;
 
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 import java.util.Hashtable;
 
 import static org.easymock.EasyMock.*;

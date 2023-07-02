@@ -14,7 +14,7 @@
  */
 package org.springframework.security.saml.storage;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Storage factory used for testing.

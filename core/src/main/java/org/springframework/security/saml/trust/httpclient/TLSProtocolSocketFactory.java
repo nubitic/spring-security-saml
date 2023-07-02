@@ -20,7 +20,7 @@ import org.springframework.security.saml.trust.X509KeyManager;
 import org.springframework.security.saml.trust.X509TrustManager;
 import org.springframework.security.saml.util.SAMLUtil;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import javax.net.ssl.HostnameVerifier;
 import java.io.IOException;
 import java.net.InetAddress;

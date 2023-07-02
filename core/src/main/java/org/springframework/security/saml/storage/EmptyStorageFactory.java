@@ -14,7 +14,7 @@
  */
 package org.springframework.security.saml.storage;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Storage factory which doesn't return any storage implementation and disables the message storage mechanism.
