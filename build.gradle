@@ -52,12 +52,7 @@ configure(allprojects) { project ->
 		mavenCentral()
 		maven { url 'https://build.shibboleth.net/nexus/content/repositories/releases/' }
 		maven { url 'https://repository.mulesoft.org/releases/'}
-		maven { url "https://nexus-repo.nubitic.mx/repository/releases/"         
-				credentials {
-		            username "admin"
-		            password "8ho]y\\~+\"Ro]-|x"
-				}
-			   }
+		maven { url "https://nexus-repo.nubitic.mx/repository/releases/" }
 	}
 
 	ext.javadocLinks = [
