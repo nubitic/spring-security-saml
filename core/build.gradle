@@ -42,8 +42,8 @@ dependencies {
 	api group: "com.narupley", name: "not-going-to-be-commons-ssl", version: "0.3.20"
 	//compileOnly group: "xml-apis", name: "xml-apis", version: "$xmlApisVersion"
 
-	implementation "jakarta.servlet:jakarta.servlet-api:6.0.0"
-	implementation "jakarta.platform:jakarta.jakartaee-api:9.0.0"
+	implementation "jakarta.servlet:jakarta.servlet-api:5.0.0"
+	implementation "jakarta.platform:jakarta.jakartaee-api:10.0.0"
 /**************************************************/
 	testCompileOnly "org.easymock:easymock:3.5.1",
 		"junit:junit:4.12",
